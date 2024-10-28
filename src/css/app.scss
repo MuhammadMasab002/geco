@@ -1,1 +1,87 @@
 // app global css in SCSS form
+
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
+
+.body {
+  // font-family: 'Oxanium', cursive;
+  // <uniquifier>: Use a unique and descriptive class name
+  // <weight>: Use a value from 200 to 800
+
+  font-family: "Oxanium", sans-serif;
+  // font-optical-sizing: auto;
+  // font-style: normal;
+}
+.font-oxanium {
+  font-family: 'Oxanium', cursive;
+}
+
+.container {
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.logo {
+  max-height: 40px;
+}
+
+.nav-item {
+  background-color: transparent;
+  color: #fff;
+  padding: 7px 20px;
+  text-align: center;
+  font-family: 'Oxanium', sans-serif;
+
+  &:hover {
+    background-color:#ff9900;
+    color: #000;
+
+  }
+}
+
+
+
+.active {
+  background-color: #ff9900;
+  color: #000;
+
+}
+
+.primary-btn {
+  color: #000;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.add-skew {
+  transform: skewX(-16deg);
+  transition: .3s linear;
+}
+.remove-skew {
+  transform: skewX(16deg);
+  transition: .3s linear;
+}
+
+.primary-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -10px;
+  bottom: 0;
+  width: 5px;
+  height: 100%;
+  background-color: #e4a101;
+  transition: .3s linear;
+
+  // z-index: -1;
+}
+
+.primary-btn:hover::after {
+  right: 0px;
+}
+
+.hero_heading {
+  font-family: 'Oxanium', sans-serif;
+}
+

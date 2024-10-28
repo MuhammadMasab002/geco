@@ -1,15 +1,49 @@
 <template>
-  <q-page class="flex flex-center">
-    <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-vertical.svg"
-      style="width: 200px; height: 200px"
-    >
+  <q-page>
+
+    <HeroBanner />
+    <ReleasedGame />
+    <JustForGamer />
+    <JustFeaturedGame />
+    <WorldMeetReal />
+    <GamingProductsCorner />
+    <LatestArticles />
+    <FooterSection />
+     <!-- <carousel /> -->
+
+
+
   </q-page>
 </template>
 
-<script setup>
-defineOptions({
-  name: 'IndexPage'
-});
+<script>
+
+import HeroBanner from "src/components/HeroBanner.vue";
+import ReleasedGame from "src/components/ReleasedGame.vue";
+import JustForGamer from "src/components/JustForGamer.vue";
+import JustFeaturedGame from "src/components/JustFeaturedGame.vue";
+import WorldMeetReal from "src/components/WorldMeetReal.vue";
+import GamingProductsCorner from "src/components/GamingProductsCorner.vue";
+import LatestArticles from "src/components/LatestArticles.vue";
+import FooterSection from "components/FooterSection.vue";
+import carousel from "src/components/carousel.vue";
+
+export default {
+  components: {
+    HeroBanner,
+    ReleasedGame,
+    JustForGamer,
+    JustFeaturedGame,
+    WorldMeetReal,
+    GamingProductsCorner,
+    LatestArticles,
+    FooterSection,
+
+    // carousel
+  },
+  data() {
+    return {
+    };
+  }
+}
 </script>
