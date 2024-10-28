@@ -3,14 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
 
 .body {
-  // font-family: 'Oxanium', cursive;
-  // <uniquifier>: Use a unique and descriptive class name
-  // <weight>: Use a value from 200 to 800
-
   font-family: "Oxanium", sans-serif;
-  // font-optical-sizing: auto;
-  // font-style: normal;
 }
+
 .font-oxanium {
   font-family: 'Oxanium', cursive;
 }
@@ -33,7 +28,7 @@
   font-family: 'Oxanium', sans-serif;
 
   &:hover {
-    background-color:#ff9900;
+    background-color: #ff9900;
     color: #000;
 
   }
@@ -58,6 +53,7 @@
   transform: skewX(-16deg);
   transition: .3s linear;
 }
+
 .remove-skew {
   transform: skewX(16deg);
   transition: .3s linear;
@@ -84,4 +80,3 @@
 .hero_heading {
   font-family: 'Oxanium', sans-serif;
 }
-

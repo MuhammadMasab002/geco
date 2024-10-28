@@ -9,7 +9,6 @@
     <GamingProductsCorner />
     <LatestArticles />
     <FooterSection />
-     <!-- <carousel /> -->
 
 
 
@@ -38,8 +37,6 @@ export default {
     GamingProductsCorner,
     LatestArticles,
     FooterSection,
-
-    // carousel
   },
   data() {
     return {
