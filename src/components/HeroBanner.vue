@@ -2,43 +2,98 @@
   <!-- <div class="container"> -->
   <Carousel autopla="4000" wrap-around="true">
     <!-- autoplay="2000" wrap-around="true" -->
-    <Slide v-for="slide in 2" :key="slide">
+    <Slide v-for="(slide, index) in slides" :key="index">
       <div class="carousel__item">
-        <div class="main-slider" style="height: 100vh;">
-
+        <div
+          class="main-slider"
+          style="height: 100vh"
+          :style="{ 'background-image': `url(${slide.bgImage})` }"
+        >
           <div class="slider_circle_img">
-            <img src="/images/slider_circle.png" alt="slider_circle" />
+            <img :src="slide.circleImg" alt="slider_circle" />
           </div>
 
-          <div class="flex hero_text container" :class="$q.screen.lt.md ? 'justify-center' : 'justify-left text-left'">
-            <div class="row items-center q-mt-xl"
-              :class="$q.screen.lt.md ? 'q-px-none justify-center' : 'q-px-md justify-left'" style="z-index: 10;">
+          <div
+            class="flex hero_text container"
+            :class="
+              $q.screen.lt.md ? 'justify-center' : 'justify-left text-left'
+            "
+          >
+            <div
+              class="row items-center q-mt-xl"
+              :class="
+                $q.screen.lt.md
+                  ? 'q-px-none justify-center'
+                  : 'q-px-md justify-left'
+              "
+              style="z-index: 10"
+            >
               <div class="col-xs-12 col-sm-9 col-lg-10">
-                <h5 class="text-weight-bold text-uppercase q-my-none text-primary"
-                  :class="$q.screen.lt.md ? 'text-h6' : 'text-h5'">World Gaming</h5>
-                <h1 class="hero_heading text-weight-bolder q-my-none q-py-md"
-                  :class="$q.screen.xs ? 'text-h3' : $q.screen.gt.md ? 'text-h1' : 'text-h2'">
-                  Create
-                  <span class="text-primary">Manage</span> <br>
-                  Matches
+                <h5
+                  class="text-weight-bold text-uppercase q-my-none text-primary"
+                  :class="$q.screen.lt.md ? 'text-h6' : 'text-h5'"
+                >
+                  {{ slide.heading }}
+                </h5>
+                <h1
+                  class="hero_heading text-weight-bolder q-my-none q-py-md"
+                  :class="
+                    $q.screen.xs
+                      ? 'text-h3'
+                      : $q.screen.gt.md
+                      ? 'text-h1'
+                      : 'text-h2'
+                  "
+                >
+                  <span v-html="highlightMiddleWord(slide.subheading)"></span>
+                  <!-- Create
+                  <span class="text-primary">Manage</span> <br />
+                  Matches -->
                 </h1>
-                <p class="text-subtitle1 q-pb-lg q-mb-none" :class="$q.screen.lt.md ? 'q-pr-none q-px-md' : 'q-pr-xl'"
-                  :style="$q.screen.lt.md ? 'width: 100%;' : 'width: 80%'">
-                  Find technology or people for digital projects in public sector and Find an individual specialist
-                  develope researcher.
+                <p
+                  class="text-subtitle1 q-pb-lg q-mb-none"
+                  :class="$q.screen.lt.md ? 'q-pr-none q-px-md' : 'q-pr-xl'"
+                  :style="$q.screen.lt.md ? 'width: 100%;' : 'width: 80%'"
+                >
+                  {{ slide.description }}
                 </p>
-                <q-btn flat square :ripple="false" color="black"
+                <q-btn
+                  flat
+                  square
+                  :ripple="false"
+                  color="black"
                   class="primary-btn add-skew q-ml-xs q-mb-lg q-px-lg q-py-md bg-primary q-mr-lg"
-                  :class="$q.screen.lt.md ? 'q-mt-md' : 'q-mt-lg'">
-                  <span class="remove-skew q-px-md text-body1 text-weight-bold">Read More</span>
+                  :class="$q.screen.lt.md ? 'q-mt-md' : 'q-mt-lg'"
+                >
+                  <span class="remove-skew q-px-md text-body1 text-weight-bold"
+                    >
+                      {{ slide.buttonText }}
+                    </span
+                  >
                 </q-btn>
               </div>
             </div>
-            <div class="absolute slider_img1" :class="$q.screen.lt.md ? 'hidden' : 'visible'">
-              <img class="img-responsive" :src="'/images/slider_img01.png'" alt="slider_img" sty />
+            <div
+              class="absolute slider_img1"
+              :class="$q.screen.lt.md ? 'hidden' : 'visible'"
+            >
+              <img
+                class="img-responsive"
+                :src="slide.img1"
+                alt="slider_img"
+                sty
+              />
             </div>
-            <div class="absolute slider_img2" :class="$q.screen.lt.md ? 'hidden' : 'visible'">
-              <img class="img-responsive" :src="'/images/slider_img02.png'" alt="slider_img" sty />
+            <div
+              class="absolute slider_img2"
+              :class="$q.screen.lt.md ? 'hidden' : 'visible'"
+            >
+              <img
+                class="img-responsive"
+                :src="slide.img2"
+                alt="slider_img"
+                sty
+              />
             </div>
           </div>
         </div>
@@ -54,13 +109,13 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
-import { Carousel, Navigation, Pagination, Slide } from 'vue3-carousel'
+import { defineComponent } from "vue";
+import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
 
-import '/node_modules/vue3-carousel/dist/carousel.css'
+import "/node_modules/vue3-carousel/dist/carousel.css";
 
 export default defineComponent({
-  name: 'Basic',
+  name: "Basic",
   components: {
     Carousel,
     Slide,
@@ -69,10 +124,46 @@ export default defineComponent({
   },
   data() {
     return {
-
-    }
-  }
-})
+      slides: [
+        {
+          bgImage: "/images/slider_bg02.jpg",
+          circleImg: "/images/slider_circle.png",
+          img1: "/images/slider_img01.png",
+          img2: "/images/slider_img02.png",
+          // alt: "Slider 1",
+          heading: "World Gaming",
+          subheading: "Create Manage Matches",
+          description:
+            "Find technology or people for digital projects in public sector and Find an individual specialist developer researcher.",
+          buttonText: "Read More",
+        },
+        {
+          bgImage: "/images/slider_bg02.jpg",
+          circleImg: "/images/slider_circle.png",
+          img1: "/images/slider_img01.png",
+          img2: "/images/slider_img02.png",
+          // alt: "Slider 2",
+          heading: "New Adventures",
+          subheading: "Cod Modern Warfare",
+          description:
+            "Discover new experiences and enjoy the thrill of adventure with our new features and updates.",
+          buttonText: "Learn More",
+        },
+      ],
+    };
+  },
+  methods: {
+    highlightMiddleWord(heading) {
+      const words = heading.split(" ");
+      if (words.length < 3) return heading;
+      const middleIndex = Math.floor(words.length / 2);
+      words[
+        middleIndex
+      ] = `<span class="text-primary">${words[middleIndex]}</span>`;
+      return words.join(" ");
+    },
+  },
+});
 </script>
 
 <style>
@@ -103,7 +194,8 @@ export default defineComponent({
 } */
 
 .main-slider {
-  background: url('/images/slider_bg02.jpg') no-repeat;
+  /* background-image: url("/images/slider_bg02.jpg"); */
+  background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
   position: relative;
@@ -116,7 +208,6 @@ export default defineComponent({
   transform: translate(-50%, -50%);
   /* left: 400px; */
   width: 100%;
-
 }
 
 .slider_circle_img img {
@@ -147,7 +238,6 @@ export default defineComponent({
     width: 400px;
   }
 }
-
 
 .slider_img2 {
   animation-fill-mode: both;
@@ -223,14 +313,12 @@ export default defineComponent({
 @media screen and (max-width: 768px) {
   .slider_circle_img img {
     width: 400px;
-
   }
 }
 
 @media screen and (max-width: 425px) {
   .slider_circle_img img {
     width: 370px;
-
   }
 }
 </style>

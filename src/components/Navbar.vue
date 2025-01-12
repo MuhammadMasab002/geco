@@ -227,7 +227,7 @@ export default {
 }
 
 .menu-icon {
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .drop-menu {

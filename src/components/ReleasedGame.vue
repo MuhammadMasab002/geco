@@ -117,7 +117,7 @@
                       square
                       :ripple="false"
                       color="black"
-                      class="primary-btn add-skew bg-primary q-mt-md q-mb-lg q-px-lg q-py-md"
+                      class="primary-btn add-skew bg-primary q-mt-lg q-mb-lg q-ml-md q-px-lg q-py-md"
                     >
                       <span
                         class="remove-skew q-px-md text-body1 text-weight-bold"
@@ -143,38 +143,31 @@
             ref="carousel"
           >
             <Slide v-for="slide in 4" :key="slide">
-              <!-- <div class="carousel__item" @click="slideTo(slide - 1)">{{ slide }}</div> -->
               <div
-                class="carousel__item q-gutter-y-lg"
+                class="carousel__item"
+                :class="$q.screen.lt.lg ? 'q-gutter-y-md' : 'q-gutter-y-lg'"
                 @click="slideTo(slide - 1)"
               >
-                <!-- <div
-                  class=""
-                > -->
-                  <!-- :style="
-                    $q.screen.lt.lg ? { height: '990px' } : { height: '560px' }
-                  " -->
-                  <q-img
-                    width="100%"
-                    :height="$q.screen.lt.lg ? 'auto' : '150px'"
-                    src="/images/release_game_nav01.jpg"
-                  />
-                  <q-img
-                    width="100%"
-                    :height="$q.screen.lt.lg ? 'auto' : '150px'"
-                    src="/images/release_game_nav02.jpg"
-                  />
-                  <q-img
-                    width="100%"
-                    :height="$q.screen.lt.lg ? 'auto' : '150px'"
-                    src="/images/release_game_nav01.jpg"
-                  />
-                  <q-img
-                    width="100%"
-                    :height="$q.screen.lt.lg ? 'auto' : '150px'"
-                    src="/images/release_game_nav03.jpg"
-                  />
-                <!-- </div> -->
+                <q-img
+                  width="100%"
+                  :height="$q.screen.lt.lg ? 'auto' : '150px'"
+                  src="/images/release_game_nav01.jpg"
+                />
+                <q-img
+                  width="100%"
+                  :height="$q.screen.lt.lg ? 'auto' : '150px'"
+                  src="/images/release_game_nav02.jpg"
+                />
+                <q-img
+                  width="100%"
+                  :height="$q.screen.lt.lg ? 'auto' : '150px'"
+                  src="/images/release_game_nav01.jpg"
+                />
+                <q-img
+                  width="100%"
+                  :height="$q.screen.lt.lg ? 'auto' : '150px'"
+                  src="/images/release_game_nav03.jpg"
+                />
               </div>
             </Slide>
           </Carousel>
