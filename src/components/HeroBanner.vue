@@ -79,7 +79,7 @@ export default defineComponent({
 .carousel__item {
   width: 100%;
   min-height: 200px;
-  background-color: green;
+  /* background-color: green; */
   color: var(--vc-clr-white);
 }
 

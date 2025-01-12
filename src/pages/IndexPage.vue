@@ -3,6 +3,7 @@
 
     <HeroBanner />
     <ReleasedGame />
+    <!-- <newCarousel /> -->
     <JustForGamer />
     <JustFeaturedGame />
     <WorldMeetReal />
@@ -19,6 +20,7 @@
 
 import HeroBanner from "src/components/HeroBanner.vue";
 import ReleasedGame from "src/components/ReleasedGame.vue";
+import newCarousel from "src/components/newCarousel.vue";
 import JustForGamer from "src/components/JustForGamer.vue";
 import JustFeaturedGame from "src/components/JustFeaturedGame.vue";
 import WorldMeetReal from "src/components/WorldMeetReal.vue";
@@ -31,6 +33,7 @@ export default {
   components: {
     HeroBanner,
     ReleasedGame,
+    newCarousel,
     JustForGamer,
     JustFeaturedGame,
     WorldMeetReal,

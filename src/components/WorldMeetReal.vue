@@ -4,7 +4,7 @@
       <div class="row flex-center q-col-gutter-xl">
         <div class="col-xs-12 col-sm-10 col-md-6">
           <div class="world-real-img">
-            <q-img src="/public/images/cta_img.png" />
+            <q-img src="/images/cta_img.png" />
           </div>
         </div>
         <div class="col-xs-12 col-sm-10 col-md-6">
@@ -23,7 +23,7 @@
             </p>
 
             <div>
-              <q-img style="width: 300px;" src="/public/images/title_bar03.png" />
+              <q-img style="width: 300px;" src="/images/title_bar03.png" />
             </div>
 
             <q-btn flat square :ripple="false" color="black" class="primary-btn add-skew q-ml-xs q-px-lg q-py-md q-mt-xl bg-primary">
@@ -48,7 +48,7 @@ export default {
 
 <style scoped>
 .world-meet-real-section {
-  background: url('/public/images/cta_bg.jpg') no-repeat;
+  background: url('/images/cta_bg.jpg') no-repeat;
   background-size: cover;
   background-position: center;
   width: 100%;

@@ -12,7 +12,7 @@
               Compete with 100 players on a remote island for winner takes showdown known issue where certain skin
               strategic
             </p>
-            <q-img style="width: 300px;" src="/public/images/title_bar02.png" />
+            <q-img style="width: 300px;" src="/images/title_bar02.png" />
           </div>
         </div>
       </div>

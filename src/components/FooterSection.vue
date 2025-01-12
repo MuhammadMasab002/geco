@@ -16,11 +16,11 @@
                 <q-form>
                   <div class="row input-group items-center"
                     :class="$q.screen.lt.md ? 'justify-center q-px-none q-gutter-y-md' : $q.screen.lt.lg ? 'justify-end q-px-sm' : 'justify-end q-px-md'">
-                    <q-input class="add-skew custom-input inline-block text-subtitle1 text-weight-bold" color="primary"
-                      filled square v-model="text" placeholder="Enter your email..."
+                    <q-input standout class="add-skew custom-input inline-block text-white text-subtitle1 text-weight-bold" color="primary"
+                       square v-model="email" placeholder="Enter your email..."
                       :style="$q.screen.lt.sm ? 'width: 310px' : 'width: 60%'">
                       <template v-slot:prepend>
-                        <q-icon class="remove-skew" name="email" color="primary" />
+                        <q-icon class="remove-skew" name="fa-regular fa-envelope" color="primary" />
                       </template>
                     </q-input>
                     <q-btn flat square :ripple="false" color="black"
@@ -45,7 +45,7 @@
             <div class="col-xs-12 col-sm-10 col-md-6 col-lg-4 text-white">
               <div class="footer-logo flex items-center q-mb-lg">
                 <q-icon name="camera" size="46px" color="orange" />
-                <span class="font-oxanium text-h4 text-weight-bolder q-ml-sm">Deco</span>
+                <span class="font-oxanium text-h4 text-weight-bolder q-ml-sm">Geco</span>
               </div>
               <p class="text-subtitle1 text-grey-5 text-weight-medium q-mb-none">
                 Gemas marketplace the relase etras thats sheets continig passag.
@@ -75,22 +75,22 @@
                     <q-item-label>Graphics (26)</q-item-label>
                   </q-item-section>
                 </q-item>
-                <q-item clickable :ripple="false" class="bg- q-mb-sm footer-item">
+                <q-item clickable :ripple="false" class="bg- q-mb-sm footer-item no-hover">
                   <q-item-section>
                     <q-item-label>Backgrounds (11)</q-item-label>
                   </q-item-section>
                 </q-item>
-                <q-item clickable :ripple="false" class="bg- q-mb-sm footer-item">
+                <q-item clickable :ripple="false" class="bg- q-mb-sm footer-item no-hover">
                   <q-item-section>
                     <q-item-label>Fonts (9)</q-item-label>
                   </q-item-section>
                 </q-item>
-                <q-item clickable :ripple="false" class="bg- q-mb-sm footer-item">
+                <q-item clickable :ripple="false" class="bg- q-mb-sm footer-item no-hover">
                   <q-item-section>
                     <q-item-label>Music (3)</q-item-label>
                   </q-item-section>
                 </q-item>
-                <q-item clickable :ripple="false" class="bg- q-mb-sm footer-item">
+                <q-item clickable :ripple="false" class="bg- q-mb-sm footer-item no-hover">
                   <q-item-section>
                     <q-item-label>Photography (3)</q-item-label>
                   </q-item-section>
@@ -106,40 +106,28 @@
                     <q-item-label>Terms & Conditions</q-item-label>
                   </q-item-section>
                 </q-item>
-                <q-item clickable :ripple="false" class="bg- q-mb-sm footer-item">
+                <q-item clickable :ripple="false" class="bg- q-mb-sm footer-item no-hover">
                   <q-item-section>
                     <q-item-label>Privacy Policy</q-item-label>
                   </q-item-section>
                 </q-item>
-                <q-item clickable :ripple="false" class="bg- q-mb-sm footer-item">
+                <q-item clickable :ripple="false" class="bg- q-mb-sm footer-item no-hover">
                   <q-item-section>
                     <q-item-label>Refund Policy</q-item-label>
                   </q-item-section>
                 </q-item>
-                <q-item clickable :ripple="false" class="bg- q-mb-sm footer-item">
+                <q-item clickable :ripple="false" class="bg- q-mb-sm footer-item no-hover">
                   <q-item-section>
                     <q-item-label>Affiliate</q-item-label>
                   </q-item-section>
                 </q-item>
-                <q-item clickable :ripple="false" class="bg- q-mb-sm footer-item">
+                <q-item clickable :ripple="false" class="bg- q-mb-sm footer-item no-hover">
                   <q-item-section>
                     <q-item-label>FAQUse Cases</q-item-label>
                   </q-item-section>
                 </q-item>
               </q-list>
             </div>
-
-            <!-- <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
-              <h5 class="text-h5 text-weight-bold text-primary q-my-none q-pb-lg"
-                :class="$q.screen.lt.md ? 'q-pt-lg' : 'q-pt-sm'">Need Help?</h5>
-              <ul class="footer-links " style="list-style: none; padding-left: 0;">
-                <li>Terms & Conditions</li>
-                <li>Privacy Policy</li>
-                <li>Refund Policy</li>
-                <li>Affiliate</li>
-                <li>FAQUse Cases</li>
-              </ul>
-            </div> -->
 
             <div class="col-xs-12 col-sm-8 col-md-4 col-lg-4 text-white">
               <h5 class="font-oxanium text-h5 text-weight-bold text-white q-my-none q-pb-lg"
@@ -152,8 +140,8 @@
               </div>
               <h5 class="font-oxanium text-h5 text-weight-bold text-white q-my-none q-pb-lg q-pt-lg">Newsletter Sign Up
               </h5>
-              <q-input square placeholder="Enter your email"
-                class="footer-input custom-input  text-subtitle2 text-white q-pl-md">
+              <q-input standout square v-model="text" placeholder="Enter your email"
+                class="footer-input custom-input text-subtitle2 text-white">
                 <template #append>
                   <q-icon name="fa-solid fa-rocket" class="text-dark bg-orange q-pa-md" />
                 </template>
@@ -188,15 +176,16 @@
 
 export default {
   // name: 'ComponentName',
-  setup() {
+  data() {
     return {
-      text: ''
+      text: '',
+      email: ''
     }
   }
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 /* .footer-container {
   background-color: #1a1a2e;
 } */
@@ -228,8 +217,9 @@ export default {
   }
 }
 
-.no-hover.q-item--hoverable:hover {
+:deep(.no-hover:hover>.q-focus-helper) {
   background-color: transparent !important;
+  opacity: 0 !important;
 }
 
 .footer-item {
@@ -237,7 +227,7 @@ export default {
   transition: .3s ease-in-out;
 
   &:hover {
-    background-color: transparent !important;
+    /* background-color: transparent !important; */
     color: #ffcc00;
     padding-left: 4px !important;
   }

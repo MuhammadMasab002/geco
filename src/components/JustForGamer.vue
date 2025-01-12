@@ -35,7 +35,7 @@
             <img class="line-shape" src="/images/gamers_circle_line.png" />
             <img class="circle-shape" src="/images/gamers_circle_shape.png" />
           </div>
-          <q-img v-if="$q.screen.gt.md" class="gamer-chart" src="/public/images/just_gamers_chart.png" />
+          <q-img v-if="$q.screen.gt.md" class="gamer-chart" src="/images/just_gamers_chart.png" />
         </div>
       </div>
     </div>
